@@ -1,9 +1,9 @@
     <h2> Create new forum </h2>
 
-    <% form_for :forum, url:forum_path do |f| %>
+    <%= form_for :forum, url:forums_path do |f| %>
 
     <p>
-        <%= f.text_field :title %>
+        <%= f.text_field :name %>
     </p>
 
     <p>
@@ -12,6 +12,6 @@
     </p>
 
     <p>
-        <input type="submit" name="commit" value="Create Article" data-disable-with="Create Forum">    
+        <%= f.submit "Create forum" %>    
     </p>
     <% end %>

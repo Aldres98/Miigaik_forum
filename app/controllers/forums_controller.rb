@@ -9,4 +9,17 @@ class ForumsController < ApplicationController
 
   def show
   end
+
+  def create
+
+    @forum = Forum.new(forum_params)
+    if @forum.valid?
+      @forum.save
+      redirect_to @forum
+    end
+
+  else
+    render action: 'new'
+  end
+
 end
