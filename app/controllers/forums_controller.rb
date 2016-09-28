@@ -5,21 +5,25 @@ class ForumsController < ApplicationController
   end
 
   def edit
+    @forum = ForumMain.find(params[:id])
   end
 
   def show
   end
 
   def create
-
-    @forum = Forum.new(forum_params)
-    if @forum.valid?
-      @forum.save
-      redirect_to @forum
-    end
-
-  else
-    render action: 'new'
+    @forum = ForumMain.new(forum_params)
+    @forum.save
   end
+
+  def new
+  end
+
+    private
+
+  def forum_params
+    params.require(:forum).permit(:name, :description)
+  end
+
 
 end

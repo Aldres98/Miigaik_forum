@@ -9,7 +9,7 @@
       <td><h4><%= link_to h(forum.name), forum_path(forum) %></h4>
         <%=h forum.description %></td>
       <td class="right"></td>
-      <td><%= link_to "Show", forum_path(forum) %></td>
+      <td><%= link_to "Delete", forum_path(forum) %></td>
       <td><%= link_to "Edit", edit_forum_path(forum) %></td>
     </tr>
   <% end %>
